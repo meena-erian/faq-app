@@ -14,25 +14,64 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body{
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+
+}
+.search {
+  margin: auto;
+  display: block;
+  width: 85%;
+  max-width: 600px;
+  font-size: larger;
+}
+.faq-item{
+  text-align: left;
+  background: lightblue;
+  margin-top: 20px;
+  border-radius: 7px;
+  border: 1px solid rgba(0,0,0,.3);
+  box-shadow: 3px 3px 5px rgb(0 0 0 / 30%);
+}
+.faq-question{
+  
+}
+.faq-answer{
+  margin: 3vw;
+}
+.faq-footer{
+  font-size: 14px;
+  background-color: lightgray;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+.faq-footer span{
+  border: 1px solid rgba(0,0,0,.4);
+  background-color: lightgreen;
+  border-radius: 4px;
+}
+.topnav{
+  background: lightgreen;
+  padding: 15px;
+  border-bottom: 1px solid black;
+  box-shadow: 4px 4px 5px rgb(0 0 0 / 40%);
+  font-size: 24px;
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+}
+#results{
+  padding-top: 200px;
+  font-size: 24px;
 }
