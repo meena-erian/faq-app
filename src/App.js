@@ -45,9 +45,13 @@ function FAQsearch(keyword) {
   var results = faq.filter(
     q => {
       for(var i=0; i<keyWords.length; i++){
-        if(q.question.toLowerCase().search(keyWords[i].toLowerCase()) > -1) return true;
+        if(
+          q.question.toLowerCase().search(keyWords[i].toLowerCase()) === -1 &&
+          q.department.toLowerCase().search(keyWords[i].toLowerCase()) === -1 &&
+          q.treatment.toLowerCase().search(keyWords[i].toLowerCase()) === -1
+        ) return false;
       }
-      return false;
+      return true;
     }
   );
   if (selectedDept.length) results = results.filter(q => q.department === selectedDept);
