@@ -41,7 +41,15 @@ function FAQsearch(keyword) {
   }
   var selectedDept = document.querySelector('#department').value;
   var selectedCPT = document.querySelector('#treatment').value;
-  var results = faq.filter(q => q.question.search(keyword) > -1);
+  var keyWords = keyword.split(' ');
+  var results = faq.filter(
+    q => {
+      for(var i=0; i<keyWords.length; i++){
+        if(q.question.toLowerCase().search(keyWords[i].toLowerCase()) > -1) return true;
+      }
+      return false;
+    }
+  );
   if (selectedDept.length) results = results.filter(q => q.department === selectedDept);
   if (selectedCPT.length) results = results.filter(q => q.treatment === selectedCPT);
   printResults(results);
