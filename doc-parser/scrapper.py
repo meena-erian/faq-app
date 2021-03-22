@@ -56,4 +56,4 @@ for department in deps:
 with open('FAQ.json', 'w') as out:
     json.dump(results, out)
 print('Done', len(results))
-print(len(results), ' FAQs retrived');
+print(len(results), ' FAQs updated')

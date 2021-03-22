@@ -1,0 +1,5 @@
+{
+  "lang": "PHP",
+  "from": "./build",
+  "to": "https://everlast-faq.portacode.com/deploy-handler"
+}
