@@ -114,7 +114,6 @@ function openTreatment(e) {
 function App() {
   const [department, setDepartment] = useState("");
   const [questions, setQuestions] = useState("");
-  faq2().then(f => setQuestions(f));
   return (
     <div className="App">
       <header className="App-header">

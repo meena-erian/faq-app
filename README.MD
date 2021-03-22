@@ -35,6 +35,7 @@ Now that you have python 3 and NPM installed on your device, open a terminal in 
 | Command | Description |
 | ------- | ----------- |
 | ```npm install``` | installs all required packages for this project | 
+| ```pip install python-docx``` | install the python module used to read microsoft word documents. |
 | ```npm run build``` | Compiles microsoft word documents under doc-parser into a JS list of structured questions and answers and then builds the app |
 | ```npm install -g deploy-handler``` | installs a CLI that can be used to deploy the project to a remote server with just one command |
 | ```deploy``` | Used to update the project on the remote server. (This command will prompt for a secret key to sign the package) |
