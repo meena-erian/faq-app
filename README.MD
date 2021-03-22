@@ -50,5 +50,5 @@ After complting the installation, next time you need to publish any further upda
 
 | Command | Description |
 | ------- | ----------- |
-| ```npm run build``` | recompile word document to  ```src/constants/faq.js``` and then rebuild the app |
+| ```npm run build``` | recompile word documents under doc-parser to  ```src/constants/faq.js``` and then rebuild the app |
 | ```deploy``` | republish the app to the remote server |
