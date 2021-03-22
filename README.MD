@@ -1,6 +1,6 @@
 # Everlast FAQ web-app
 
-A simple app that complies microsoft word document files into structured searchable list of questions and answers.
+A simple app that compiles microsoft word document files into structured searchable list of questions and answers.
 
  
 
