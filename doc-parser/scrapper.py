@@ -53,7 +53,9 @@ for department in deps:
                     }
                 )
                 results.extend(FAQ)
-with open('FAQ.json', 'w') as out:
-    json.dump(results, out)
+with open('../src/constants/faq.js', 'w') as out:
+    out.write('const faq = ')
+    out.write(json.dumps(results))
+    out.write(';\nexport default faq;')
 print('Done', len(results))
 print(len(results), ' FAQs updated')

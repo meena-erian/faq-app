@@ -3,7 +3,7 @@
 A simple app that complies microsoft word document files into structured searchable list of questions and answers.
 
  
- 
+
 
 ## Installation Prerequisites
 
@@ -15,7 +15,7 @@ To build this software, first you have to make sure you have Node.JS & NPM insta
 
 ## How to complie FAQs
 
-Now that you have python 3 installed on your device, open a terminal in this directory and run the following command:
+:
 
 ```
 python doc-parser/scrapper.py
@@ -30,13 +30,13 @@ This will update the structured list of questions and answers stored in ```src/c
 
 ## How to build this project
 
-Now that you have NPM installed, open a terminal on this directory and run the following commands one by one
+Now that you have python 3 and NPM installed on your device, open a terminal in this directory and run the following commands one by one
 
 | Command | Description |
 | ------- | ----------- |
 | ```npm install``` | installs all required packages for this project | 
-| ```npm run build``` | Build the app |
-| ```npm install -g deploy-handler``` | installs a CLI that can be used to deploy the project to a remote server with just onw ommand |
+| ```npm run build``` | Compiles microsoft word documents under doc-parser into a JS list of structured questions and answers and then builds the app |
+| ```npm install -g deploy-handler``` | installs a CLI that can be used to deploy the project to a remote server with just one command |
 | ```deploy``` | Used to update the project on the remote server. (This command will prompt for a secret key to sign the package) |
  
 
@@ -49,6 +49,5 @@ After complting the installation, next time you need to publish any further upda
 
 | Command | Description |
 | ------- | ----------- |
-| ```python doc-parser/scrapper.py``` | recompile word document to  ```src/constants/faq.js``` |
-| ```npm run build``` | rebuild the app |
+| ```npm run build``` | recompile word document to  ```src/constants/faq.js``` and then rebuild the app |
 | ```deploy``` | republish the app to the remote server |

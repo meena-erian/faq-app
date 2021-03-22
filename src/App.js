@@ -1,22 +1,37 @@
 import { useState } from 'react';
 import './App.css';
 import faq from "./constants/faq.js";
-import faq2 from "./constants/faq-async.js";
 import * as colors from "./constants/colors.js";
-//import 'bootstrap/dist/css/bootstrap.min.css';
-//import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
+/**
+ * @var depts Array of all department names
+ */
 var depts = {};
 faq.forEach(q => {
   depts[q.department] = true;
 });
 depts = Object.keys(depts);
+
+/**
+ * Escape HTML entries in order to savely print arbitrary text on the document
+ * 
+ * @param {string} html Any text that can possibly contain HTML entries
+ * @returns {string} Text with all HTML entries excaped so it can be 
+ * safely inserted into the document
+ */
 function escapeHtml(html) {
   var p = document.createElement('p');
   p.innerText = html;
   return p.innerHTML;
 }
+
+/**
+ * A function that renders questions and answers on the DOM
+ * 
+ * @param {Object} arr An array of FAQ objects where each object has the
+ * following properties {question, answer, department, treatment, lang}
+ */
 function printResults(arr) {
   var resDiv = document.querySelector('#results');
   var resHTML = '';
@@ -34,6 +49,14 @@ function printResults(arr) {
   });
   resDiv.innerHTML = resHTML;
 }
+
+/**
+ * This function shows search results by calling printResults after performing a 
+ * filteration based on provided keywords.
+ * 
+ * @param {string} keyword A string containg one or more space delimited keywords 
+ * which will be used to filter results.
+ */
 function FAQsearch(keyword) {
   if (keyword.length < 3) {
     printResults([]);
@@ -59,6 +82,13 @@ function FAQsearch(keyword) {
   printResults(results);
 }
 
+/**
+ * This function is used to render a list of options in the treatments select 
+ * input based on the currently selected department. 
+ * 
+ * @param {string} currentDept The currently selected department.
+ * @returns <React.Component>
+ */
 function selectedTreatments(currentDept) {
   var treatments = {};
   faq.forEach(q => {
@@ -68,6 +98,13 @@ function selectedTreatments(currentDept) {
   return Object.keys(treatments).map(treatment => <option value={treatment} key={treatment} />);
 }
 
+/**
+ * This function uses printResults() to render results once a user selects a treament from the 
+ * treatments select.
+ * 
+ * @param {Event} e A mouse event of any input device event that triggered a change in the 
+ * treatments select.
+ */
 function openTreatment(e) {
   var selectedDept = document.querySelector('#department').value;
   var results = faq.filter(q => q.department === selectedDept && q.treatment === e.target.value);
