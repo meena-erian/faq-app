@@ -4,18 +4,14 @@ A simple app that compiles microsoft word document files into structured searcha
 
  
 
-
 ## Installation Prerequisites
 
 To build this software, first you have to make sure you have Node.JS & NPM installed on your device, and python 3
-
- 
 
   
 
 ## How to complie FAQs
 
-:
 
 ```
 python doc-parser/scrapper.py
@@ -37,7 +33,7 @@ Now that you have python 3 and NPM installed on your device, open a terminal in 
 | ```npm install``` | installs all required packages for this project | 
 | ```pip install python-docx``` | install the python module used to read microsoft word documents. |
 | ```npm run build``` | Compiles microsoft word documents under doc-parser into a JS list of structured questions and answers and then builds the app |
-| ```npm install -g deploy-handler``` | installs a CLI that can be used to deploy the project to a remote server with just one command |
+| ```npm install -g deploy-handler``` or ```sudo npm install -g deploy-handler``` for macOS and Linux | installs a CLI that can be used to deploy the project to a remote server with just one command |
 | ```deploy``` | Used to update the project on the remote server. (This command will prompt for a secret key to sign the package) |
  
 
@@ -50,5 +46,4 @@ After complting the installation, next time you need to publish any further upda
 
 | Command | Description |
 | ------- | ----------- |
-| ```npm run build``` | recompile word documents under doc-parser to  ```src/constants/faq.js``` and then rebuild the app |
-| ```deploy``` | republish the app to the remote server |
+| ```npm run update``` | recompile word documents under doc-parser to  ```src/constants/faq.js``` and rebuild the app and then republish the app to the remote server |
