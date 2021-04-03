@@ -33,13 +33,13 @@ def extractQuestions(text, arabic = False, init = {}):
             ret[indx]['question'] = aq[1] + sep
     return ret
 
-deps = os.listdir('.')
+deps = [ name for name in os.listdir('.') if os.path.isdir(os.path.join('.', name)) ]
 results = []
 for department in deps:
     if os.path.isdir(department):
-        languages = os.listdir(department)
+        languages = [ name for name in os.listdir(department) if os.path.isdir(os.path.join(department, name)) ]
         for language in languages:
-            treatments = os.listdir(department + '/' + language)
+            treatments = [ name for name in os.listdir(department + '/' + language) if os.path.splitext(name)[1] == '.docx' ]
             for treatment in treatments:
                 print (department, " >> ", language, " >> ", treatment)
                 if treatment.startswith('~') or not treatment.endswith('docx'):
